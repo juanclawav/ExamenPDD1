@@ -22,7 +22,13 @@ public class RegistroTesis {
         return instanciaUnica;
     }
     public void registrarTesis(Tesis tesis){
-        if (!tesisRegistradas.contains(tesis)) {
+        boolean copy = false;
+        for(Tesis t : tesisRegistradas){
+            if (tesis.getTitulo()== t.getTitulo()){
+                copy = true;
+            }
+        }
+        if (!copy) {
             tesisRegistradas.add(tesis);
             count++;
             horaRegistro = new Date();
@@ -36,7 +42,7 @@ public class RegistroTesis {
             System.out.println("No hay tesis registradas");
         }else{
             for(Tesis t : tesisRegistradas){
-                System.out.println("Tíyulo: "+t.getTitulo() + " | Mención:" + t.getMencion()
+                System.out.println("Título: "+t.getTitulo() + " | Mención:" + t.getMencion()
                 + " | Estudiante: "+t.getEstudiante().getNombre() + " (CI: "+t.getEstudiante().getCi()+")"+ " | Hora de registro: " + horaRegistro);
             }
         }
