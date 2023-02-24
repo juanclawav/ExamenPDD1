@@ -32,7 +32,7 @@ public class Celular implements Cloneable {
     public String getPais(){
         return paisCreado;
     }
-    public void setImmei(int imei){
+    public void setImei(int imei){
         this.imei = imei;
     }
     public Celular clone() throws CloneNotSupportedException {
